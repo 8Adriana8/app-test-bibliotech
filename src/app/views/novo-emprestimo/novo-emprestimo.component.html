@@ -1,0 +1,54 @@
+<app-header></app-header>
+<div class="container">
+    <h1>Novo Empréstimo</h1>
+    <form [formGroup]="formEmprestimo">
+
+        <div class="full-width">
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Leitor</mat-label>
+                <input type="text" matInput placeholder="Leitor" formControlName="leitor">
+            </mat-form-field>
+        </div>
+
+        <div class="full-width">    
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>E-mail</mat-label>
+                <input type="email" matInput placeholder="E-mail" formControlName="email">
+            </mat-form-field>
+        </div>
+
+        <div class="full-width">
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Telefone</mat-label>
+                <input type="text" matInput placeholder="Telefone" formControlName="telefone">
+            </mat-form-field>
+        </div>
+        
+<!--         <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Status</mat-label>
+            <input type="text" matInput placeholder="Status" formControlName="status">
+        </mat-form-field> -->
+
+
+        <mat-form-field appearance="fill">
+            <mat-label>Status</mat-label>
+            <select matNativeControl formControlName="status">
+                <option value="" disabled selected></option>
+                <option value="disponivel">Disponivel</option>
+                <option value="emprestado">Emprestado</option>
+                <option value="emprestado">Pendente</option>
+            </select>
+        </mat-form-field>
+    
+        
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Titulo</mat-label>
+            <input type="text" matInput placeholder="Titulo" formControlName="titulo">
+        </mat-form-field>
+
+        <div class="full-width">
+            <button class="full-width btn-submit" mat-raised-button (click)="createEmprestimo()">Cadastrar</button>
+       
+        </div>
+    </form>
+</div>
