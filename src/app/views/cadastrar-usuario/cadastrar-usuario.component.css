@@ -65,3 +65,7 @@
 .login-form button {
     font-size: 17px;
 }
+.login-form button:hover {
+    background-color:rgba(119, 245, 60, 0.968);
+cursor: pointer;
+}

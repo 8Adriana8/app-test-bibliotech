@@ -45,3 +45,8 @@ table {
 .btn-submit:hover {
     background-color:rgba(119, 245, 60, 0.968);
 }
+
+.example-additional-selection {
+    opacity: 0.75;
+    font-size: 0.75em;
+  }

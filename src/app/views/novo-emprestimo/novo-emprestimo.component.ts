@@ -37,7 +37,7 @@ export class NovoEmprestimoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public createEmprestimo(): void {
+/*  public createEmprestimo(): void {
     if(this.formEmprestimo.valid) {
       const emprestimo: Emprestimo = this.formEmprestimo.value;
       this.emprestimoService.createEmprestimo(emprestimo).subscribe(response => {
@@ -48,7 +48,11 @@ export class NovoEmprestimoComponent implements OnInit {
     else {
       this.notification.showMessage("Dados inválidos.");
     }
-  }
+  } */
+
+  public novoEmprestimo():void{
+    if(this.formEmprestimo.valid){
+      const emprestimo: Emprestimo = this.formEmprestimo.value}}
 
   public uploadFile(event: any): void {
     this.isLoadUpLoad = true;

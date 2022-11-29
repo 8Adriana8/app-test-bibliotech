@@ -7,6 +7,7 @@ import { Component, OnInit} from '@angular/core';
 import { UploadService } from 'src/app/services/upload.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DetailsComponent } from 'src/app/components/details/details.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @Component({
   selector: 'app-livro-bibliotech',
@@ -17,9 +18,11 @@ export class LivroBibliotechComponent implements OnInit {
 
   public formLivro: FormGroup;
   public isLoadUpLoad: boolean = false;  
+  public dataSource: Livro[] = [];
+  private capa: string = ""
 
   displayedColumns = ['Titulo', 'Categoria', 'Autor', 'ISBN', 'excluir'];
-  dataSource: Livro[] = [];
+ 
 
   constructor(
     fb: FormBuilder,
@@ -27,14 +30,15 @@ export class LivroBibliotechComponent implements OnInit {
     private notification: NotificationService,
     private dialog: MatDialog,    
     private router: Router,
-    private upLoadService: UploadService
+    private upLoadService: UploadService,
+    
   ) {
     this.formLivro = fb.group({
       titulo: ["", [Validators.required]],
       categoria: ["", [Validators.required]],
       autor: ["", [Validators.required]],
       isbn: ["", [Validators.required]],
-      capa: ["", [Validators.required]]
+      capa: [""]
     });
    }
 

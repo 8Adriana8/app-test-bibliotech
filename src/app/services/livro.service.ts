@@ -12,7 +12,7 @@ export class LivroService {
 
   constructor(
     private firestore: AngularFirestore,
-    private notification: NotificationService
+    private notification: NotificationService,
   ) { }
 
   public createLivro(livro: Livro): Observable<any> {
